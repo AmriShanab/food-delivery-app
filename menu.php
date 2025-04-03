@@ -75,7 +75,7 @@ if (isset($_GET['restaurant_id'])) {
                             <option value="L">Large</option>
                         </select>
                     </div>
-                    <button type="button" class="btn btn-primary" id="addToCart">Add to Cart</button>
+                    <button type="button" class="btn btn-primary button-color" id="addToCart">Add to Cart</button>
                 </form>
             </div>
         </div>
@@ -84,60 +84,82 @@ if (isset($_GET['restaurant_id'])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Capture all "Order Now" buttons
-        let orderButtons = document.querySelectorAll(".order-btn");
-
-        orderButtons.forEach(button => {
-            button.addEventListener("click", function(event) {
-                // Prevent default behavior of the anchor tag
-                event.preventDefault();
-
-                // Get the data from the clicked button
-                let itemId = this.getAttribute("data-id");
-                let itemName = this.getAttribute("data-name");
-                let itemPrice = this.getAttribute("data-price");
-
-                // Set the values in the modal
-                document.getElementById("item_id").value = itemId;
-                document.getElementById("item_name").value = itemName;
-                document.getElementById("item_price").value = itemPrice;
-
-                // Manually show the modal using Bootstrap's modal API
-                let modal = new bootstrap.Modal(document.getElementById("orderModal"));
-                modal.show();
-            });
-        });
-
-        // Handle Add to Cart button click
-        document.getElementById("addToCart").addEventListener("click", function() {
-            // Get all the values from the modal form
-            let itemId = document.getElementById("item_id").value;
-            let itemName = document.getElementById("item_name").value;
-            let itemPrice = document.getElementById("item_price").value;
-            let quantity = document.getElementById("quantity").value;
-            let size = document.getElementById("size").value;
-
-            // Send data to server (add to cart)
-            fetch("add_to_cart.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: `id=${itemId}&name=${itemName}&price=${itemPrice}&quantity=${quantity}&size=${size}`
-            })
-            .then(response => response.text())
-            .then(data => {
-                alert("Item added to cart!");
-
-                // Close the modal after adding to cart
-                let modal = bootstrap.Modal.getInstance(document.getElementById("orderModal"));
-                modal.hide();
-            })
-            .catch(error => {
-                console.error("Error adding to cart: ", error);
-                alert("There was an error adding the item to the cart.");
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+    // Set up modal with item data when Order Now is clicked
+    document.querySelectorAll('.order-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            document.getElementById('item_id').value = this.getAttribute('data-id');
+            document.getElementById('item_name').value = this.getAttribute('data-name');
+            document.getElementById('item_price').value = this.getAttribute('data-price');
         });
     });
+
+    // Add to cart button functionality
+    document.getElementById('addToCart').addEventListener('click', function() {
+        const itemId = document.getElementById('item_id').value;
+        const itemName = document.getElementById('item_name').value;
+        const itemPrice = parseFloat(document.getElementById('item_price').value);
+        const quantity = parseInt(document.getElementById('quantity').value);
+        const size = document.getElementById('size').value;
+        
+        if (!itemId || !itemName || !itemPrice || !quantity) {
+            alert('Please select an item first');
+            return;
+        }
+
+        // Create cart item object
+        const cartItem = {
+            id: itemId,
+            name: itemName,
+            price: itemPrice,
+            quantity: quantity,
+            size: size,
+            restaurant_id: <?php echo $restaurant_id; ?>
+        };
+
+        // Get existing cart from localStorage or initialize empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Check if item already exists in cart
+        const existingItemIndex = cart.findIndex(item => 
+            item.id === itemId && item.size === size && item.restaurant_id === <?php echo $restaurant_id; ?>
+        );
+        
+        if (existingItemIndex >= 0) {
+            // Update quantity if item exists
+            cart[existingItemIndex].quantity += quantity;
+        } else {
+            // Add new item to cart
+            cart.push(cartItem);
+        }
+        
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Update cart count in navbar (if you have one)
+        updateCartCount();
+        
+        // Close modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+        modal.hide();
+        
+        // Show success message
+        alert(`${quantity} ${itemName} (${size}) added to cart!`);
+    });
+
+    // Function to update cart count in navbar
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        const cartCountElements = document.querySelectorAll('.cart-count');
+        
+        cartCountElements.forEach(element => {
+            element.textContent = totalItems;
+            element.style.display = totalItems > 0 ? 'inline-block' : 'none';
+        });
+    }
+
+    // Initialize cart count on page load
+    updateCartCount();
+});
 </script>
