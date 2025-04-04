@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle file upload
     $image = '';
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = '../../assets/images/restaurants/';
+        $uploadDir = '../../assets/images/';
         $image = basename($_FILES['image']['name']);
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $image);
     }

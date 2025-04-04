@@ -13,6 +13,9 @@ require_once '../includes/header.php';
             <a href="create.php" class="btn btn-sm btn-outline-primary">
                 <i class="bi bi-plus"></i> Add New Restaurant
             </a>
+            <a href="../dashboard.php" class="btn btn-sm btn-outline-primary button-color" style="color: white; margin-left: 20px; border: none">
+                <i class="bi bi-arrow-left"></i> Back to home
+            </a>
         </div>
     </div>
 
