@@ -13,6 +13,30 @@
 <<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 =======
+<style>
+        .navbar {
+            background-color: #121212 !important; /* Force black background */
+            color: rgb(255, 92, 51) !important; /* White text for contrast */
+            padding: 15px 30px;
+        }
+
+        .nav-links a {
+            color: white !important; /* Ensure link color is white */
+        }
+
+        .navbar .logo a {
+            color: rgb(255, 92, 51) !important; /* Logo color */
+        }
+
+        .nav-links a:hover {
+            background-color: rgb(255, 92, 51) !important; /* Hover effect */
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgb(255, 92, 51) !important; /* Hover effect for dropdown */
+        }
+
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 >>>>>>> e93fe8dcdb6c01b59fb24ad707b4c7e030e4b6f0
 </head>
