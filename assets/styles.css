@@ -420,3 +420,91 @@ body {
     }
 }
 
+/* Checkout Style */
+
+/* Checkout Form Styling */
+#checkoutModal .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#checkoutModal .card {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#checkoutModal .card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#checkoutModal .form-control, #checkoutModal .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+#checkoutModal .form-control:focus, #checkoutModal .form-select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.25);
+}
+
+#checkoutModal label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+#checkoutModal .input-group-text {
+    border-radius: 8px 0 0 8px;
+}
+
+#submitOrder {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    border: none;
+}
+
+#submitOrder:hover {
+    background: linear-gradient(135deg, #3b5ab9 0%, #1a3a8f 100%);
+}
+
+/* Map Section Styles */
+.map-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    margin: 40px 0;
+}
+
+.map-section h2 {
+    color: #2e3a4d;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 30px;
+}
+
+.map-section h2:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #4e73df;
+    bottom: -10px;
+    left: 25%;
+}
+
+/* Leaflet Map Overrides */
+.leaflet-popup-content {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+/* Restaurant marker popup styling */
+.leaflet-popup-content b {
+    color: #4e73df;
+}

@@ -1,0 +1,507 @@
+
+/* Reset default margins & paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F0F8FF;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3E2723;
+    padding: 15px 30px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    color: #FF7F11;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #FF7F11;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #333;
+    padding: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #FF7F11;
+    color: white;
+}
+
+.show-dropdown {
+    display: block !important;
+}
+
+/* About & Rider Section */
+.about-rider-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 500px;
+    margin-top: 80px;
+    padding: 50px;
+}
+
+/* Left Side: About Section */
+.about-section {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #3E2723;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.about-section .btn {
+    background-color: #FF7F11;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.about-section .btn:hover {
+    background-color: #E06B10;
+}
+
+/* BENEfits Section */
+
+/* Benefits Section */
+.benefits-section {
+    background-color: #FF7F11;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.benefits-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.benefits-section .brand {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.8rem;
+}
+
+/* Benefit Items */
+.benefits-section .benefit {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.benefits-section .benefit-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #3E2723;
+    border-radius: 8px;
+    margin: 10px;
+    color: white;
+    transition: transform 0.3s ease;
+    min-width: 250px; /* Ensures minimum width */
+    max-width: 300px; /* Prevents it from getting too big */
+}
+
+.benefits-section .benefit-item:hover {
+    transform: scale(1.05);
+}
+
+/* Image Styling for Consistency */
+.benefits-section .benefit-item img {
+    width: 80px; /* Set a fixed width */
+    height: 80px; /* Set a fixed height */
+    object-fit: contain; /* Ensures the entire image fits without distortion */
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Title and Text */
+.benefits-section .benefit-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.benefits-section .benefit-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benefits-section .benefit {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .benefits-section .benefit-item {
+        flex: none;
+        width: 90%; /* Ensures it doesn't stretch too much */
+        max-width: 350px;
+    }
+} 
+
+
+/* GENERAL STYLES */
+.small-font{
+    font-size: small !important;
+}
+
+.heading-r{
+    font-size: 65px;
+    font-style: italic;
+    color: #3E2723;
+    text-align: center;
+}
+
+.margin-minus{
+    margin: 0 -5px 0 -5px !important;
+}
+
+.button-color{
+    background-color: #E06B10 !important;
+    border-color: #E06B10 !important;
+}
+
+.card-img-top {
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintain aspect ratio and crop excess */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures consistent height */
+    height: 100%; /* All cards will have the same height */
+    margin: 10px 0px !important;
+}
+
+.card-body {
+    flex-grow: 1; /* Makes sure the button stays at the bottom */
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+.active {
+    color: #fff;
+    background-color: #E06B10;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+
+
+/* Right Side: Rider Section */
+.rider-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+/* Half-Circle Positioned on Right */
+.half-circle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #FF7F11;
+    border-radius: 50% 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    /* Animation */
+    transform: translateX(100%);
+    animation: slideInRight 1.2s ease-out forwards;
+}
+
+/* Rider Image */
+.rider-image {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Slide in from Right to Left */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design using Bootstrap Breakpoints */
+
+/* For large screens */
+@media (min-width: 992px) {
+    .about-rider-section {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .about-section, .rider-container {
+        flex: 1;
+    }
+}
+
+/* For medium screens */
+@media (max-width: 992px) {
+    .about-rider-section {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .about-section {
+        order: 2;
+        text-align: center;
+    }
+
+    .rider-container {
+        order: 1;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .half-circle {
+        width: 70%;
+        border-radius: 50%;
+    }
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+    .half-circle {
+        width: 80%;
+    }
+
+    .rider-image {
+        width: 200px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 576px) {
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    .about-section .btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Mobile Menu */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #3E2723;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Checkout Style */
+
+/* Checkout Form Styling */
+#checkoutModal .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#checkoutModal .card {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#checkoutModal .card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#checkoutModal .form-control, #checkoutModal .form-select {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+#checkoutModal .form-control:focus, #checkoutModal .form-select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.25);
+}
+
+#checkoutModal label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+#checkoutModal .input-group-text {
+    border-radius: 8px 0 0 8px;
+}
+
+#submitOrder {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    border: none;
+}
+
+#submitOrder:hover {
+    background: linear-gradient(135deg, #3b5ab9 0%, #1a3a8f 100%);
+}
+
+/* Map Section Styles */
+.map-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    margin: 40px 0;
+}
+
+.map-section h2 {
+    color: #2e3a4d;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 30px;
+}
+
+.map-section h2:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: #4e73df;
+    bottom: -10px;
+    left: 25%;
+}
+
+/* Leaflet Map Overrides */
+.leaflet-popup-content {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+/* Restaurant marker popup styling */
+.leaflet-popup-content b {
+    color: #4e73df;
+}
