@@ -25,6 +25,9 @@ if ($restaurant_id) {
             <a href="create.php<?= $restaurant_id ? '?restaurant_id='.$restaurant_id : '' ?>" class="btn btn-sm btn-outline-primary">
                 <i class="bi bi-plus"></i> Add New Menu Item
             </a>
+            <a href="../dashboard.php" class="btn btn-sm btn-outline-secondary" style="margin-left: 20px;">
+                <i class="bi bi-arrow-left"></i> Back to Restaurants
+            </a>
             <?php if ($restaurant_id): ?>
                 <a href="../restaurants/" class="btn btn-sm btn-outline-secondary ms-2">
                     <i class="bi bi-arrow-left"></i> Back to Restaurants

@@ -37,7 +37,7 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
     <!-- Custom Admin CSS -->
-    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/styles.css">
     
     <style>
         .sidebar {

@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="image" class="form-label">Restaurant Image</label>
                     <?php if ($restaurant['image']): ?>
                         <div class="mb-2">
-                            <img src="../../assets/images/restaurants/<?= htmlspecialchars($restaurant['image']) ?>" 
+                            <img src="../../assets/images/<?= htmlspecialchars($restaurant['image']) ?>" 
                                  width="100" class="img-thumbnail">
                         </div>
                     <?php endif; ?>

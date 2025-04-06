@@ -13,25 +13,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <style>
         .navbar {
-            background-color: #121212 !important; /* Force black background */
-            color: rgb(255, 92, 51) !important; /* White text for contrast */
+            background-color: #121212 !important; 
+            color: rgb(255, 92, 51) !important; 
             padding: 15px 30px;
         }
 
         .nav-links a {
-            color: white !important; /* Ensure link color is white */
+            color: white !important; 
         }
 
         .navbar .logo a {
-            color: rgb(255, 92, 51) !important; /* Logo color */
+            color: rgb(255, 92, 51) !important; 
         }
 
         .nav-links a:hover {
-            background-color: rgb(255, 92, 51) !important; /* Hover effect */
+            background-color: rgb(255, 92, 51) !important; 
         }
 
         .dropdown-content a:hover {
-            background-color: rgb(255, 92, 51) !important; /* Hover effect for dropdown */
+            background-color: rgb(255, 92, 51) !important; 
         }
 
     </style>
@@ -55,7 +55,7 @@
                 <div class="dropdown-content">
                     <a href="profile.php">Profile</a>
                     <a href="settings.php">Settings</a>
-                    <a href="logout.php">Logout</a>
+                    <a href="signin.php">Logout</a>
                 </div>
             </li>
         </ul>

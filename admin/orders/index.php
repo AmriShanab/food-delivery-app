@@ -10,7 +10,8 @@ require_once '../includes/header.php';
         <h1 class="h2">Orders</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Export</button> -->
+                 <a href="../dashboard.php" class="btn btn-primary button-color">Back to Home</a>
             </div>
         </div>
     </div>
