@@ -1,22 +1,48 @@
 <?php
+session_start();
 header('Content-Type: application/json');
+require_once 'database/dbconfig.php';
 
-include "database/dbconfig.php";
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'User not logged in.'
+    ]);
+    exit;
+}
 
-// Get the POST data
+$userId = $_SESSION['user_id'];
+
+// Get POST data
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
+// Validate required fields (optional but recommended)
+$requiredFields = ['firstName', 'lastName', 'email', 'phone', 'address', 'paymentMethod', 'subtotal', 'deliveryFee', 'total', 'restaurant_id', 'cart'];
+foreach ($requiredFields as $field) {
+    if (empty($data[$field])) {
+        echo json_encode([
+            'success' => false,
+            'message' => "Missing required field: $field"
+        ]);
+        exit;
+    }
+}
+
 try {
-    // Start transaction
     $db->beginTransaction();
 
-    // Generate order number
+    // Generate unique order number
     $orderNumber = 'ORD-' . strtoupper(uniqid());
 
-    // Insert order into database
+    // Prepare card details if payment method is card
+    $cardDetails = ($data['paymentMethod'] === 'card') ? json_encode($data['cardDetails']) : null;
+
+    // Insert into orders table
     $orderQuery = $db->prepare("
         INSERT INTO orders (
+            user_id,
             order_number, 
             first_name, 
             last_name, 
@@ -30,12 +56,11 @@ try {
             delivery_fee, 
             total,
             restaurant_id
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ");
 
-    $cardDetails = ($data['paymentMethod'] === 'card') ? json_encode($data['cardDetails']) : null;
-    
     $orderQuery->execute([
+        $userId,
         $orderNumber,
         $data['firstName'],
         $data['lastName'],
@@ -44,7 +69,7 @@ try {
         $data['address'],
         $data['paymentMethod'],
         $cardDetails,
-        $data['additionalInfo'],
+        $data['additionalInfo'] ?? null,
         $data['subtotal'],
         $data['deliveryFee'],
         $data['total'],
@@ -76,13 +101,13 @@ try {
         ]);
     }
 
-    // Commit transaction
     $db->commit();
 
     echo json_encode([
         'success' => true,
         'order_id' => $orderId,
-        'order_number' => $orderNumber
+        'order_number' => $orderNumber,
+        'message' => 'Order placed successfully!'
     ]);
 
 } catch (PDOException $e) {
@@ -92,4 +117,3 @@ try {
         'message' => 'Database error: ' . $e->getMessage()
     ]);
 }
-?>

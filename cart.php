@@ -13,7 +13,8 @@ include "layouts/header.php";
         <!-- Cart items will be loaded here via JavaScript -->
         <div class="text-center my-5">
             <p>Your cart is empty</p>
-            <a href="restaurants.php" class="btn btn-primary">Browse Restaurants</a>
+            <a href="restaurents.php" class="btn btn-primary button-color" style="background-color: #E06B10 !important;
+    border-color: #E06B10 !important;">Browse Restaurants</a>
         </div>
     </div>
 
@@ -136,7 +137,7 @@ include "layouts/header.php";
         </div>
     </div>
 </div>
-
+<?php include "layouts/footer.php"; ?>
 
 <!-- Make sure Bootstrap JS is included -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -65,3 +65,4 @@ if ($orderId > 0) {
         <a href="restaurents.php" class="btn btn-primary mt-3 button-color">Back to Restaurants</a>
     </div>
 </div>
+<?php include "layouts/footer.php"; ?>
