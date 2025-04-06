@@ -77,8 +77,8 @@
                         <?= htmlspecialchars($_SESSION['username'] ?? 'User') ?>
                     </a>
             <?php else: ?>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
+                <li><a href="signin.php">Login</a></li>
+                <li><a href="signup.php">Register</a></li>
             <?php endif; ?>
         </ul>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
