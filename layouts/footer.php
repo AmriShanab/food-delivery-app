@@ -77,7 +77,7 @@
             <h4>Contact Us</h4>
             <p>Email: foodexpress@gmail.com</p>
             <p>Phone: +94 77 123 4567</p>
-            <p>Address: Colombo, Sri Lanka</p>
+            <p>Address: Puttalam, Sri Lanka</p>
         </div>
     </div>
     <div class="footer-bottom">
