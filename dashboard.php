@@ -1,4 +1,6 @@
 <?php
+require_once 'auth.php';
+adminAuth(); // This will redirect to login if not authenticated
 include "layouts/header.php";
 ?>
 <!DOCTYPE html>
@@ -44,7 +46,7 @@ include "layouts/header.php";
         <div class="about-section">
             <h2>Welcome to <span class="brand">FoodExpress</span> 🚀</h2>
             <p>Your favorite meals delivered right to your doorstep. Explore our wide range of restaurants and delicious cuisines.</p>
-            <button class="btn">Explore Now</button>
+           <a href="restaurents.php"><button class="btn">Explore Now</button></a>
         </div>
 
         <!-- Right Side: Rider Section -->
@@ -64,7 +66,7 @@ include "layouts/header.php";
                     <img src="assets/images/tuans.jpeg" class="card-img-top" alt="Tuan's Food Bowl">
                     <div class="card-body text-center">
                         <h5 class="card-title">Tuan's Food Bowl</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -74,7 +76,7 @@ include "layouts/header.php";
                     <img src="assets/images/yummize.png" class="card-img-top" alt="Yumize">
                     <div class="card-body text-center">
                         <h5 class="card-title">Yumize</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -84,7 +86,7 @@ include "layouts/header.php";
                     <img src="assets/images/kandiah-THUMBNAIL.jpg" class="card-img-top" alt="Kandiah Restaurant">
                     <div class="card-body text-center">
                         <h5 class="card-title">Kandiah Restaurant</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -93,7 +95,7 @@ include "layouts/header.php";
                     <img src="assets/images/ice-talk.png" class="card-img-top" alt="Kandiah Restaurant">
                     <div class="card-body text-center">
                         <h5 class="card-title">ICE talk</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -102,7 +104,7 @@ include "layouts/header.php";
                     <img src="assets/images/jollybee.png" class="card-img-top" alt="Kandiah Restaurant">
                     <div class="card-body text-center">
                         <h5 class="card-title">Jollybee</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -111,7 +113,7 @@ include "layouts/header.php";
                     <img src="assets/images/kfc-new-logo-design-2018-1024x683.webp" class="card-img-top" alt="Kandiah Restaurant">
                     <div class="card-body text-center">
                         <h5 class="card-title">KFC</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -120,7 +122,7 @@ include "layouts/header.php";
                     <img src="assets/images/Pizza-Hut-Logo.webp" class="card-img-top" alt="Kandiah Restaurant">
                     <div class="card-body text-center">
                         <h5 class="card-title">Pizza Hut</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -129,7 +131,7 @@ include "layouts/header.php";
                     <img src="assets/images/dynamic.avif" class="card-img-top" alt="Kandiah Restaurant">
                     <div class="card-body text-center">
                         <h5 class="card-title">Dynamic</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -138,7 +140,7 @@ include "layouts/header.php";
                     <img src="assets/images/MUMS-FOOD.jpg" class="card-img-top" alt="Kandiah Restaurant">
                     <div class="card-body text-center">
                         <h5 class="card-title">Mum's Food</h5>
-                        <a href="#" class="btn btn-primary button-color">See Menu</a>
+                        <!-- <a href="#" class="btn btn-primary button-color">See Menu</a> -->
                     </div>
                 </div>
             </div>
@@ -257,3 +259,4 @@ window.addEventListener('load', function() {
 </body>
 
 </html>
+<?php include "layouts/footer.php"; ?>

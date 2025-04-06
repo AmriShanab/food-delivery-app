@@ -39,7 +39,7 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .nav-links a {
@@ -52,7 +52,7 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: rgb(255, 92, 51);
+    background-color: rgb(109, 87, 81) !important;
 }
 
 /* Dropdown Menu */
@@ -507,4 +507,79 @@ body {
 /* Restaurant marker popup styling */
 .leaflet-popup-content b {
     color: #4e73df;
+}
+
+.orders-container {
+    max-width: 1000px;
+    margin: 120px auto 40px auto; /* push down below navbar */
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container h2 {
+    color: #3E2723;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    border-left: 5px solid #FF7F11;
+    padding-left: 15px;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.orders-table th {
+    background-color: #FF7F11;
+    color: white;
+    font-weight: 600;
+}
+
+.orders-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.orders-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.orders-table ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: square;
+    color: #3E2723;
+}
+
+.orders-table li {
+    margin-bottom: 4px;
+}
+
+.status {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status.pending {
+    color: #FF7F11;
+}
+
+.status.processing {
+    color: #007BFF;
+}
+
+.status.completed {
+    color: green;
+}
+
+.status.cancelled {
+    color: red;
 }
