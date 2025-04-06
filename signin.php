@@ -132,8 +132,10 @@
             <p>Your favorite meals delivered right to your doorstep</p>
         </div>
         
-        <form class="login-form" action="login.php" method="POST">
-            <div class="error-message" id="error-message"></div>
+        <form class="login-form" action="signin_process.php" method="POST">
+        <div class="error-message" id="error-message"></div>
+
+
             
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
@@ -145,12 +147,13 @@
                 <input type="password" name="password" placeholder="Password" required>
             </div>
             
-            <button type="submit">SIGN IN</button>
+            <button id="signInButton" type="submit">SIGN IN</button>
             
             <div class="additional-links">
-                <a href="#">Forgot Password?</a> • <a href="#">Create Account</a>
+                <a href="#">Forgot Password?</a> • <a href="signup.php">Create Account</a>
             </div>
         </form>
     </div>
+
 </body>
 </html>

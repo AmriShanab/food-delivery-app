@@ -10,9 +10,7 @@
     <!-- Only include Leaflet CSS here -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Bootstrap 5 CSS -->
-<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-=======
 <style>
         .navbar {
             background-color: #121212 !important; /* Force black background */
@@ -38,7 +36,6 @@
 
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
->>>>>>> e93fe8dcdb6c01b59fb24ad707b4c7e030e4b6f0
 </head>
 
 <body>

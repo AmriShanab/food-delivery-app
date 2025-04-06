@@ -192,7 +192,7 @@
             <button type="submit">SIGN UP</button>
             
             <div class="login-link">
-                Already have an account? <a href="login.php">Sign In</a>
+                Already have an account? <a href="signin.php">Sign In</a>
             </div>
         </form>
     </div>
@@ -221,8 +221,9 @@
                 icon.classList.replace('fa-eye-slash', 'fa-eye');
             }
         }
-
-        //now add thiss
     </script>
 </body>
+    <!-- frontend end -->
 </html>
+
+
