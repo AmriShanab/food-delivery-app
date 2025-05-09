@@ -37,7 +37,7 @@ adminAuth();
                         ?>
                         <tr>
                             <td><?= $user['id'] ?></td>
-                            <td><?= htmlspecialchars($user['name']) ?></td>
+                            <td><?= htmlspecialchars($user['first_name']) ?></td>
                             <td><?= htmlspecialchars($user['email']) ?></td>
                             <td><?= htmlspecialchars($user['phone']) ?></td>
                             <td><?= date('M j, Y', strtotime($user['created_at'])) ?></td>

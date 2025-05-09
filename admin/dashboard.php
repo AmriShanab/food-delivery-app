@@ -102,7 +102,7 @@ adminAuth();
                             <tbody>
                                 <?php
                                 $orders = $db->query("
-                                    SELECT o.*, u.name AS customer_name, r.name AS restaurant_name 
+                                    SELECT o.*, u.first_name AS customer_name, r.name AS restaurant_name 
                                     FROM orders o
                                     JOIN users u ON o.user_id = u.id
                                     JOIN restaurants r ON o.restaurant_id = r.id
